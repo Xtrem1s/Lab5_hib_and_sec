@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Game</title>
+</head>
+<body>
+<a href="/table_games">Back</a>
+<form th:method="POST" th:action="@{/table_games/add}" th:object="${game}">
+    <label for="gameName">Enter name: </label>
+    <input type="text" th:field="*{gameName}" id="gameName"/>
+    <div th:if="${#fields.hasErrors('gameName')}" th:errors="*{gameName}">ERROR</div>
+    <br/>
+
+    <label for="price">Price </label>
+    <input name="price" type="number" id="price"/>
+    <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">ERROR</div>
+    <br/>
+
+    <label for="genre">Genre </label>
+    <input type="text" th:field="*{genre}" id="genre"/>
+    <div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">ERROR</div>
+    <br/>
+
+    <label for="playerAmount">Player amount </label>
+    <input name="playerAmount" type="number" id="playerAmount"/>
+    <div th:if="${#fields.hasErrors('playerAmount')}" th:errors="*{playerAmount}">ERROR</div>
+    <br/>
+
+    <input type="submit" value="Add game"/>
+</form>
+</body>
+</html>

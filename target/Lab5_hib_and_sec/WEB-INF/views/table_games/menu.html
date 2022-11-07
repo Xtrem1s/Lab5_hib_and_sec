@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+<p>Welcome <span sec:authentication="name">username</span>!</p>
+<p sec:authorize="hasAuthority('ADMIN')"><a href="/table_games/add">Add new games</a></p>
+<a href="/table_games/show">Show all games</a><br/>
+<a href="/table_games/find">Find games</a><br/>
+<form action="/logout" method="POST">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>

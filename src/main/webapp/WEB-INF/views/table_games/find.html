@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Find</title>
+</head>
+<body>
+<a href="/table_games">Back</a>
+<form th:method="GET" th:action="@{/table_games/search}">
+    <label for="price">Max price</label>
+    <input type="number" id="price" name="price"/>
+    <br/>
+    <input type="submit" value="Find"/>
+</form>
+</body>
+</html>

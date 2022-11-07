@@ -1,0 +1,1 @@
+INSERT INTO table_games (gamename,price,playeramount,genre)VALUES('Игра1','5000','5', 'logik')
